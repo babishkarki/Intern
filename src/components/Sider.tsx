@@ -5,7 +5,7 @@ import {
   ProductOutlined,
   LogoutOutlined,
 } from "@ant-design/icons";
-import { Layout, Menu} from "antd";
+import { Layout, Menu, Switch} from "antd";
 import { Link, useNavigate } from "react-router-dom";
 
 interface AppSiderProps {
@@ -13,9 +13,9 @@ interface AppSiderProps {
 }
 
 export const AppSider: React.FC<AppSiderProps> = ({ collapsed }) => {
-  // const onChange = (checked: boolean) => {
-  //   console.log(`switch to ${checked}`);
-  // };
+  const onChange = (checked: boolean) => {
+    console.log(`switch to ${checked}`);
+  };
 
   const navigate = useNavigate();
   const handleLogout = () => {
@@ -61,10 +61,10 @@ export const AppSider: React.FC<AppSiderProps> = ({ collapsed }) => {
         ]}
         className="mt-4 flex flex-col justify-center"
       />
-      {/* <div className="text-white">
+      <div className="text-white">
        <Switch defaultChecked onChange={onChange} />
        Switch Mode 
-      </div> */}
+      </div>
     </Layout.Sider>
   );
 };
